@@ -2,15 +2,8 @@ import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbo: {
-      loaders: {
-        disable: true
-      }
-    }
-  },
   webpack(config) {
-    config.resolve.alias['@'] = path.resolve(process.cwd(), 'src');
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     return config;
   }
 };
